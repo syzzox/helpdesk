@@ -43,16 +43,10 @@ class AppController extends Controller {
 			'fields'=> array(
 				'username'=>'login_usuario',
 				'password'=>'senha_usuario')));
-		
+
 		$this->Auth->allow();
 	}
 
-	// public function isAuthorized($usuario){
-	// 	if (isset($usuario['tipo_usuario']) && $usuario['tipo_usuario'] === 'admin') {
- //        return true; //Admin pode acessar todas actions
- //   		 }
- //   		return false; // O resto não pode
-	// }
 
-
+	
 }

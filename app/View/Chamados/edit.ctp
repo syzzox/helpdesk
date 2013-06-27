@@ -2,7 +2,6 @@
 	<div class="hero-unit">
 	<div class="offset2 span7">
 		<h4>Editar Chamado</h4>
-		
 		<?php
 		echo $this->Form->create('Chamado', array('action'=>'edit'));
 		echo $this->Form->radio('tipo_problema',array(

@@ -14,7 +14,7 @@
 		echo $this->Form->input('senha_usuario', array('type' => 'password'));
 		echo $this->Form->radio('tipo_usuario', array('admin' => 'Admin', 'cooperado' => 'Cooperado'),
 		array('class'=>'radio'));
-	 	echo $this->Form->input('id_setor', array('type' =>'select'));
+	 	echo $this->Form->input('setor_id', array('type' =>'select'));
 		echo $this->Form->button('Enviar', array('class'=>'btn btn-primary'));
 		echo $this->Form->end();
 		

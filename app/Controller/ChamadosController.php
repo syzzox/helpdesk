@@ -4,14 +4,27 @@ class ChamadosController extends AppController{
 
 	//public $scaffold;
 	public $name = 'Chamados';
+	public $primaryKey = 'chamado_id';
+
+
 
 	public function index(){
-		$this->set('chamados', $this->Chamado->find('all'));
+		$chamado = $this->Chamado->find('all');	
+		$this->set('chamados', $chamado);
+
+		// $user = $this->Chamado->Usuario->find('list', array(
+		// 	'fields' => array(
+		// 		'usuario_id', 'nome_usuario')));
+		// //print_r($user); exit();
+		// $this->set('usuarios', $user);
 	}
+
 	public function add(){
+
 		if ($this->request->isPost()) {
 			# code...
-			$this->request->data['Chamado']['usuario_chamado'] = $this->Auth->user('nome_usuario');
+			$this->request->data['Chamado']['usuario_id'] = $this->Auth->user('usuario_id');
+
 			if($this->Chamado->save($this->request->data)){
 				$this->redirect(array('controller'=>'chamados','action'=>'index'));
 				$this->Session->setFlash('Novo chamado cadastrado com sucesso.');

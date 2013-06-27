@@ -10,7 +10,7 @@ class Usuario extends AppModel{
 	public $belongsTo = array(
 		'Setor' => array(
 			'className' =>'Setor',
-			'foreignKey' => 'id_setor')
+			'foreignKey' => 'setor_id')
 		);
 
 	public $validate = array(

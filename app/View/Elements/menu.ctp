@@ -29,6 +29,8 @@
                         'controller'=>'Setores','action'=>'index'));?></li>
                         <li><?php echo $this->Html->link('Status',array(
                         'controller'=>'Status','action'=>'index'));?></li>
+                        <div class="btn-group">
+                          
                    </ul>
                 </div>
                     <div class="nav-collapse collapse">

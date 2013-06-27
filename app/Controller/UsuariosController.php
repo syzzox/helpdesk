@@ -6,7 +6,7 @@ class UsuariosController extends AppController{
 
 
 	public $name = 'Usuarios';
-
+	
 	public function index(){
 		$this->set('usuarios', $this->Usuario->find('all'));
 	}
@@ -18,7 +18,7 @@ class UsuariosController extends AppController{
         			));
   	       // print_r($setores); exit();
 
-			$this->set('id_setores', $setores);
+			$this->set('setores', $setores);
 
 
 		if ($this->request->isPost()) {
@@ -42,26 +42,12 @@ class UsuariosController extends AppController{
 
 		public function edit($usuario_id = null) {
 
-
-		// $setores = $this->Setor->find('list',array(
-		// 'fields' => array('setor_id','nome_setor')));
-		//));
+		$setores = $this->Usuario->Setor->find('list',array(
+		'fields' => array('setor_id','nome_setor')
+		));
 		// print_r($setores); exit();
 
-		//parametros do setor_usuario
-		// $params = array(
-		// 	'fields' => array('id_setor'),
-		// 	'conditions' => array('Usuario.id_setor' => 'Setor.setor_id')
-		// 	);
-		// $setor_usuario = $this->Usuario->find('list', $params);
-
-		
-		// //$this->set('setores', $setor_usuario);
-
-		
-		// print_r($setor_usuario); exit();
-		// //$this->set('setores', $setores);
-
+		$this->set('setores', $setores);
 
        if (!$usuario_id) {
            throw new NotFoundException(__('Invalid usuario'));
