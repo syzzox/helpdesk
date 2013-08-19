@@ -10,9 +10,10 @@
 		<?php
 		echo $this->Form->create(null,array('controller'=>'usuarios', 'action' => 'new_password'));		
 		echo $this->Form->input('senha_usuario', array('type' => 'password'));
+		echo $this->Form->input('usuario_id', array('type' => 'hidden'));
 		echo $this->Form->button('Enviar', array('class'=>'btn btn-primary'));
 		echo $this->Form->end();
-		
+
 		
 		?>
 		</div>

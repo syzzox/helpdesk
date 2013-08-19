@@ -52,14 +52,14 @@ class UsuariosController extends AppController{
 		 
 		
 
-      $user = $this->Usuario->find('first', array(
+      $usuario = $this->Usuario->find('first', array(
 		'conditions' => array(
 		'Usuario.usuario_id' => $this->Auth->user('usuario_id'))
 		));
 
 		if ($this->request->is('post') || $this->request->is('put')) {
 
-			$this->Usuario->usuario_id = $usuario_id;
+			$this->Usuario->usuario_id = $usuario['Usuario']['usuario_id'];
 
 		if ($this->Usuario->save($this->request->data))
 		{
@@ -77,7 +77,9 @@ class UsuariosController extends AppController{
 
 		}
 
-       
+		 if (!$this->request->data) {
+          $this->request->data = $usuario;
+       		}      
 		
 		
 		}
