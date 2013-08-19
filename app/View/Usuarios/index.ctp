@@ -1,7 +1,9 @@
 <div class="container-fluid">
 	<div class="hero-unit">
 <h4>Usuarios:</h4>
-<?php echo $this->Html->link('Novo Usuario',array('controller'=>'usuarios', 'action' =>'add')); ?>
+<?php 
+echo $this->Html->link('Novo Usuario',array('controller'=>'usuarios', 'action' =>'add')); 
+?>
 <table class="table">
 	<thead>
 	<tr>
@@ -28,7 +30,19 @@
 		<td><?php echo $usuario['Setor']['nome_setor']; ?></td>
 	</tr>
 	<?php } ?>
+	
+
+
+
 </table>
+
+</div>
+
+<div id="paginator" class="pagination">
+
+	<?php echo $this->Paginator->numbers(); ?>
+
+
 </div>
 </div>
 

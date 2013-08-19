@@ -4,7 +4,7 @@
 		<h4>Cadastrar Chamado</h4>
 		<?php
 		echo $this->Form->create('Chamado', array('action'=>'add'));
-		// echo $this->Form->input('chamado_usuario_id', array('value'=>'$nome'));
+		//echo $this->Form->input('chamado_usuario_id', array('value'=>'$nome'));	
 		echo $this->Form->radio('tipo_problema',array(
 			'computador'=>'Computador','impressora'=>'Impressora','scanner'=>'Scanner','outros'=>'Outros'),
 		array('class'=>'radio'));

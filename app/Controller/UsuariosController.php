@@ -6,9 +6,18 @@ class UsuariosController extends AppController{
 
 
 	public $name = 'Usuarios';
-	
+
+
+
+
 	public function index(){
 		$this->set('usuarios', $this->Usuario->find('all'));
+		$paginador = array('limit' => 5);
+		$this->paginate = $paginador;
+
+		$usuario = $this->paginate('Usuario');
+
+		$this->set('usuarios', $usuario);
 	}
 
 	public function add(){
@@ -27,9 +36,9 @@ class UsuariosController extends AppController{
 
 			if ($this->Usuario->save($this->request->data)){
 				# code...
-				
-				$this->Session->setFlash('Usuário cadastrado com sucesso.');
-				$this->redirect(array('controller'=>'usuarios','action'=>'index'));
+
+				$this->Session->setFlash('Salvo com sucesso.');
+				$this->redirect(array('controller' => 'pages', 'action' =>'index'));
 
 			} else {
 				# code...
@@ -39,15 +48,52 @@ class UsuariosController extends AppController{
 		}
 
 	}
+		public function new_password($usuario_id = null){
+		 
+		
+
+      $user = $this->Usuario->find('first', array(
+		'conditions' => array(
+		'Usuario.usuario_id' => $this->Auth->user('usuario_id'))
+		));
+
+		if ($this->request->is('post') || $this->request->is('put')) {
+
+			$this->Usuario->usuario_id = $usuario_id;
+
+		if ($this->Usuario->save($this->request->data))
+		{
+		// $this->Usuario->saveField('senha_usuario', AuthComponent::password($this->request->data['Usuario']['senha_usuario']));
+
+		$this->Session->setFlash(__('Sua senha foi alterado com sucesso!'));
+
+		// $this->redirect(array('controller' => 'pages', 'action' => 'index'));
+
+		}
+		else
+		{
+		$this->Session->setFlash(__('Tente novamente!'));
+		}
+
+		}
+
+       
+		
+		
+		}
+	
+
 
 		public function edit($usuario_id = null) {
 
 		$setores = $this->Usuario->Setor->find('list',array(
 		'fields' => array('setor_id','nome_setor')
 		));
+
 		// print_r($setores); exit();
 
 		$this->set('setores', $setores);
+
 
        if (!$usuario_id) {
            throw new NotFoundException(__('Invalid usuario'));

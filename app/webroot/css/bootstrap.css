@@ -18,9 +18,26 @@ font-weight: normal;
 font-style: normal;
 }
 
+th a.asc:after {
+    content: ' desc';
+}
+
+th a.desc:after {
+    content: ' asc';
+}
+
 *{
 /*font-family: OpenSans-CondLight-webfont;*/
 }
+
+#paginator{
+  text-align: right;
+  margin-bottom: 5px;
+ 
+
+
+}
+
 .radio{
 text-align: right;
 float: right;

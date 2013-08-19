@@ -5,6 +5,7 @@ App::uses('AuthComponent', 'Controller/Component');
 class Usuario extends AppModel{
 
 	public $name = 'Usuario';
+	public $order = array('usuario_id' => 'ASC');
 	public $primaryKey = 'usuario_id';
 	public $useTable = 'uni_usuario';
 	public $belongsTo = array(

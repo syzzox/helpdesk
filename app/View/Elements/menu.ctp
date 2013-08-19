@@ -20,8 +20,12 @@
                         <?php
                        
                            // echo 'Bem vindo,' . AuthComponent::user("login_admin");
+                         if(AuthComponent::user("tipo_usuario") == 'admin' ){
+                            
+                        
 
                         echo $this->Html->link('Usuarios', array('controller'=>'usuarios', 'action' => 'index'), array('class' =>'center'));
+
                         ?>
                         </li>
                         <li><?php echo $this->Html->link('Chamados Abertos', array('controller'=>'chamados','action'=>'index')); ?></li>
@@ -29,6 +33,14 @@
                         'controller'=>'Setores','action'=>'index'));?></li>
                         <li><?php echo $this->Html->link('Status',array(
                         'controller'=>'Status','action'=>'index'));?></li>
+                        <?php } 
+                        else{ ?>
+                        <!-- Parte de Cooperados -->
+                        <li><?php echo $this->Html->link('Chamados Abertos', array('controller'=>'chamados','action'=>'index')); ?></li>
+                           <li><?php echo $this->Html->link('Novo Chamado', array('controller'=>'chamados','action'=>'add')); ?></li>
+                           <li><?php echo $this->Html->link('Trocar Senha', array('controller'=>'usuarios','action'=>'new_password')); ?></li>
+                          <?php  } ?>
+
                         <div class="btn-group">
                           
                    </ul>
@@ -67,7 +79,7 @@
                         
                     </div><!--/.nav-collapse -->
                </div>
-           </div>
+           </div>                     
         </div>
 		<!-- Fim da barra de navegação -->
 
