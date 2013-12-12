@@ -8,7 +8,7 @@
 	</div>
 		<div class="span4">
 		<?php
-		echo $this->Form->create(null,array('controller'=>'usuarios', 'action' => 'new_password'));		
+		echo $this->Form->create('Usuario',array('controller'=>'usuarios', 'action' => 'new_password'));		
 		echo $this->Form->input('senha_usuario', array('type' => 'password'));
 		echo $this->Form->input('usuario_id', array('type' => 'hidden'));
 		echo $this->Form->button('Enviar', array('class'=>'btn btn-primary'));
