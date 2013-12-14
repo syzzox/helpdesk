@@ -7,8 +7,8 @@
 				<div class="offset4 span4 footer">
 					<h4>Entre em contato conosco:</h4>
 					<p>Tel:(024)3367-1313<br>
-						Ramal: 210 - 248 - 251 - 256 <br>
-						Funcionarios:Wagner - Marcelo - Davi - Bruno </p>
+						Ramal: 210 <br>
+						Funcionario: Bruno </p>
 				</div>
 				<div class="container-fluid copyright pull-right">
 		            <footer>
